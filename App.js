@@ -1,18 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native';
+import TodoApp from './screens/TodoApp';
+
+//redux
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import rootReducer from './redux/reducers'
+
+const store = configureStore({
+  reducer: rootReducer
+})
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <Provider store={store}>
+      <TodoApp />
+    </Provider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
