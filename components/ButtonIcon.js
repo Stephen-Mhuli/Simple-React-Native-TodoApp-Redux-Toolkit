@@ -1,10 +1,10 @@
-import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
+import { Text, StyleSheet,TouchableOpacity } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
 
 
 const ButtonIcon = (props) => {
-    const { iconName='exclamation-circle', size=24, color = 'black', onPress, Label } = props;
+    const { iconName='exclamation-circle', size = 24, color = 'black', onPress, Label } = props;
 
     return (
         <TouchableOpacity style={styles.buttonStyle} onPress={onPress}>

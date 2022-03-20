@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
-import { NativeConstants } from 'expo-constants';
+import { useState } from 'react';
 //import locally
-import ButtonIcon from '../components/buttonIcon';
+import ButtonIcon from '../components/ButtonIcon';
 import Spacer from '../components/Spacer';
 
 //import external libs
@@ -52,16 +52,17 @@ const TodoApp = ({todos_list, addTodo, deleteTodo, ...props})=>{
                 return (
                  <>
                     <Card>
-                        <Card.Title 
-                            title={`Task#${item.id}`}
+                        {/* <Card.Title
+                            title={`Task# ${item.id}`}
                             left={(props) => <Icon name="tasks" size={24} color = "black"/>}
-                            right={(props) => <ButtonIcon iconName= "close" color= "red" onPress={()=>deleteTodo(item.id)}/>}
-                        />
+                            right={(props) => <ButtonIcon  iconName= "close" color= "red" label='Own' onPress={(item)=>deleteTodo(item.id)}/>}
+                        /> */}
                         <Card.Content>
                             <Paragraph>{item.task}</Paragraph>
                         </Card.Content>
-                        <Spacer />
+                        
                     </Card>
+                    <Spacer />
                  </>
                 )
             }}
